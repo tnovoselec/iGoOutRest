@@ -8,12 +8,12 @@ public class Constants {
 	public static Map<Integer, Integer> RADIUS = new HashMap<Integer, Integer>();
 	
 	static {
-		RADIUS.put(1, 1);
-		RADIUS.put(2, 5);
-		RADIUS.put(3, 10);
-		RADIUS.put(4, 25);
-		RADIUS.put(5, 50);
-		RADIUS.put(6, 1000);
+		RADIUS.put(0, 1);
+		RADIUS.put(1, 5);
+		RADIUS.put(2, 10);
+		RADIUS.put(3, 25);
+		RADIUS.put(4, 50);
+		RADIUS.put(5, 1000);
 	}
 
 }
