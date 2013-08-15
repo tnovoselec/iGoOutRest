@@ -30,11 +30,15 @@ public class TestClient {
 		venues.put(3);
 		venues.put(4);
 		venues.put(5);
-		int radiusId = 1;
+		int radiusId = 5;
+		double lat = 45.80;
+		double lng = 15.92;
 		try {
 			json.put("interests", interests);
 			json.put("venues", venues);
 			json.put("radiusId", radiusId);
+			json.put("lat", lat);
+			json.put("lng", lng);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

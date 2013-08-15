@@ -1,5 +1,7 @@
 package hr.rest.petkovic.igoout.model;
 
+import hr.rest.petkovic.igoout.db.SimpleMySQLResult;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -93,6 +95,19 @@ public class Event {
 
 	public void setAssignedInterest(int[] assignedInterest) {
 		this.assignedInterest = assignedInterest;
+	}
+
+	public static Event getEventFromResult(SimpleMySQLResult result) {
+		Event event = new Event();
+		event.setDetailsUrl(result.getString("website"));
+		event.setId(Integer.valueOf(result.getString("id")));
+		event.setLocationId(Integer.valueOf(result.getString("location_id")));
+		event.setName(result.getString("name"));
+		event.setPictureUrl(result.getString("picture_url"));
+		event.setRatingAvg(Float.valueOf(result.getString("rating")));
+		event.setStartTime(result.getString("start_time"));
+		event.setSummary(result.getString("summary"));
+		return event;
 	}
 
 }

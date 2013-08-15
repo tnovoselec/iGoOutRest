@@ -6,6 +6,7 @@ import hr.rest.petkovic.igoout.model.Location;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -25,7 +26,17 @@ public class LocationsApi {
 		int[] interests = jsonArrayToIntArray(json.getJSONArray("interests"));
 		int[] venues = jsonArrayToIntArray(json.getJSONArray("venues"));
 		int radiusId = json.getInt("radiusId");
-		return LocationsDao.instance.getLocations(interests, venues, radiusId);
+		double lat = json.getDouble("lat");
+		double lng = json.getDouble("lng");
+		return LocationsDao.instance.getLocations(interests, venues, radiusId, lat, lng);
+	}
+
+	@GET
+	@Path("/all")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public List<Location> getAllLocations() throws JSONException {
+
+		return LocationsDao.instance.getAllLocations();
 	}
 
 	private int[] jsonArrayToIntArray(JSONArray array) {

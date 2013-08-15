@@ -1,5 +1,6 @@
 package hr.rest.petkovic.igoout.dao;
 
+import hr.rest.petkovic.igoout.db.DBHelper;
 import hr.rest.petkovic.igoout.model.Event;
 import hr.rest.petkovic.igoout.model.MockData;
 
@@ -12,6 +13,6 @@ public enum EventsDao {
 	}
 
 	public List<Event> getEvents(int locationId) {
-		return MockData.getEvents();
+		return DBHelper.getInstance().getEventsOnLocation(locationId);
 	}
 }
