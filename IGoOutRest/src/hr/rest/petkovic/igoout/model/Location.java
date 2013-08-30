@@ -17,6 +17,7 @@ public class Location {
 	private String summary;
 	private String website;
 	private int[] events;
+	private int[] interests;
 	private String pictureUrl;
 
 	public int getId() {
@@ -114,13 +115,28 @@ public class Location {
 	public void setPictureUrl(String pictureUrl) {
 		this.pictureUrl = pictureUrl;
 	}
-	
-	public static Location getLocationFromResult(SimpleMySQLResult result){
+
+	public int[] getInterests() {
+		return interests;
+	}
+
+	public void setInterests(int[] interests) {
+		this.interests = interests;
+	}
+
+	public static Location getLocationFromResult(SimpleMySQLResult result) {
 		Location location = new Location();
 		location.setAddress(result.getString("address"));
 		location.setId(Integer.valueOf(result.getString("id")));
 		location.setLat(Double.valueOf(result.getString("latitude")));
 		location.setLng(Double.valueOf(result.getString("longitude")));
+		location.setName(result.getString("name"));
+		location.setPhoneNumber(result.getString("phone"));
+		location.setPictureUrl(result.getString("picture_url"));
+		location.setSummary(result.getString("summary"));
+		location.setType(result.getString("type"));
+		location.setWebsite(result.getString("website"));
+		location.setWorkingHours(result.getString("hours"));
 		return location;
 	}
 }

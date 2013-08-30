@@ -28,7 +28,8 @@ public class LocationsApi {
 		int radiusId = json.getInt("radiusId");
 		double lat = json.getDouble("lat");
 		double lng = json.getDouble("lng");
-		return LocationsDao.instance.getLocations(interests, venues, radiusId, lat, lng);
+		List<Location> loc = LocationsDao.instance.getLocations(interests, venues, radiusId, lat, lng);
+		return loc;
 	}
 
 	@GET

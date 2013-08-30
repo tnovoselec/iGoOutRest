@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Constants {
-	
+	public static final int MAX_COMMENTS_PER_USER_PER_EVENT = 3;
 	public static Map<Integer, Integer> RADIUS = new HashMap<Integer, Integer>();
-	
+
 	static {
 		RADIUS.put(0, 1);
 		RADIUS.put(1, 5);

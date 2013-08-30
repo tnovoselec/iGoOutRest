@@ -47,11 +47,42 @@ public class TestClient {
 		// .accept(MediaType.TEXT_PLAIN).get(ClientResponse.class)
 		// .toString());
 		// Get plain text
-		System.out.println(service.path("rest").path("locations")
-				.accept(MediaType.APPLICATION_JSON).post(String.class, json));
+		System.out.println(service.path("rest").path("locations").accept(MediaType.APPLICATION_JSON)
+				.post(String.class, json));
 		// Get XML
-		System.out.println(service.path("rest").path("events/10")
-				.accept(MediaType.APPLICATION_JSON).get(String.class));
+//		System.out.println(service.path("rest").path("events/10")
+//				.accept(MediaType.APPLICATION_JSON).get(String.class));
+
+//		JSONObject user = new JSONObject();
+//		try {
+//			user.put("username", "djuka");
+//			user.put("password", "caiac");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		JSONObject comment = new JSONObject();
+//		try{
+//			comment.put("user_id", 1);
+//			comment.put("event_id", 2);
+//			comment.put("username", "pero");
+//			comment.put("comment", "kita");
+//		}catch(Exception e){
+//			
+//		}
+		
+		JSONObject rating = new JSONObject();
+		try{
+			rating.put("user_id", 4);
+			rating.put("event_id", 2);
+			rating.put("username", "bogdan");
+			rating.put("rating", 5);
+		}catch(Exception e){
+			
+		}
+//		System.out.println(service.path("rest").path("user/login")
+//				.accept(MediaType.APPLICATION_JSON).post(String.class, user));
+		System.out.println(service.path("rest").path("ratings")
+				.accept(MediaType.APPLICATION_JSON).post(String.class, rating));
 		// The HTML
 		// System.out.println(service.path("rest").path("hello")
 		// .accept(MediaType.TEXT_HTML).get(String.class));
@@ -60,6 +91,7 @@ public class TestClient {
 
 	private static URI getBaseURI() {
 		return UriBuilder.fromUri("http://localhost:8080/IGoOutRest/").build();
+//		return UriBuilder.fromUri("http://62.75.155.123:8081/IGoOutRest/").build();
 	}
 
 }

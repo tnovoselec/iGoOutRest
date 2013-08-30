@@ -1,5 +1,7 @@
 package hr.rest.petkovic.igoout.model;
 
+import hr.rest.petkovic.igoout.db.SimpleMySQLResult;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -49,6 +51,15 @@ public class User {
 
 	public void setCommentedEvents(int[] commentedEvents) {
 		this.commentedEvents = commentedEvents;
+	}
+
+	public static User createUserFromResult(SimpleMySQLResult result) {
+		User user = new User();
+		user.setId(Integer.valueOf(result.getString("id")));
+		user.setPassword(result.getString("password"));
+		user.setUsername(result.getString("username"));
+		return user;
+
 	}
 
 }

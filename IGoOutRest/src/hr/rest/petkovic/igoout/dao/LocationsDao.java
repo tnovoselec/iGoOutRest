@@ -13,10 +13,15 @@ public enum LocationsDao {
 	}
 
 	public List<Location> getLocations(int[] interests, int[] venues, int radiusId, double lat, double lng) {
-		return DBHelper.getInstance().getFilteredLocations(interests, venues, radiusId, lat, lng);
+		List<Location> locations = DBHelper.getInstance().getFilteredLocations(interests, venues, radiusId, lat, lng);
+		for (Location l : locations) {
+			l.setInterests(DBHelper.getInstance().getInterestsForLocation(l.getId()));
+			l.setEvents(DBHelper.getInstance().getEventsIdOnLocation(l.getId()));
+		}
+		return locations;
 	}
-	
-	public List<Location> getAllLocations(){
+
+	public List<Location> getAllLocations() {
 		return DBHelper.getInstance().getAllLocations();
 	}
 

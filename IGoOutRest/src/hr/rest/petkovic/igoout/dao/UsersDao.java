@@ -1,6 +1,6 @@
 package hr.rest.petkovic.igoout.dao;
 
-import hr.rest.petkovic.igoout.model.MockData;
+import hr.rest.petkovic.igoout.db.DBHelper;
 import hr.rest.petkovic.igoout.model.User;
 
 public enum UsersDao {
@@ -10,10 +10,10 @@ public enum UsersDao {
 	}
 
 	public User login(String username, String password) {
-		return MockData.getUser();
+		return DBHelper.getInstance().loginUser(username, password);
 	}
-	
-	public User register(String username, String password){
-		return MockData.getUser();
+
+	public User register(String username, String password) {
+		return DBHelper.getInstance().registerUser(username, password);
 	}
 }
