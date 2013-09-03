@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response.Status.Family;
 
 public class InvalidRequestException extends WebApplicationException{
 	
-	private static final int INVALID_REQUEST = 1415;
+	private static final int INVALID_REQUEST = 554;
 	
 	public InvalidRequestException(final String message){
 		super(Response.status(new StatusType() {

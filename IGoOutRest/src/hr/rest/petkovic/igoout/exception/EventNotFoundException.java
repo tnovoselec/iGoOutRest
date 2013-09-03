@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response.Status.Family;
 
 public class EventNotFoundException extends WebApplicationException {
 	
-	private static final int EVENT_NOT_FOUND_CODE = 1414;
+	private static final int EVENT_NOT_FOUND_CODE = 553;
 	
 	public EventNotFoundException(final String message){
 		super(Response.status(new StatusType() {

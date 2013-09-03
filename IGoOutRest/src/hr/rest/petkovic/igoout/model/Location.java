@@ -1,5 +1,6 @@
 package hr.rest.petkovic.igoout.model;
 
+import hr.rest.petkovic.igoout.Constants;
 import hr.rest.petkovic.igoout.db.SimpleMySQLResult;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -132,7 +133,7 @@ public class Location {
 		location.setLng(Double.valueOf(result.getString("longitude")));
 		location.setName(result.getString("name"));
 		location.setPhoneNumber(result.getString("phone"));
-		location.setPictureUrl(result.getString("picture_url"));
+		location.setPictureUrl(Constants.LIVE_URL + Constants.IMAGES_FOLDER + result.getString("picture_url"));
 		location.setSummary(result.getString("summary"));
 		location.setType(result.getString("type"));
 		location.setWebsite(result.getString("website"));

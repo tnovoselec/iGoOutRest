@@ -68,16 +68,16 @@ CREATE TABLE IF NOT EXISTS `locations` (
 ) ENGINE=INNODB  DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=11 ;
 
 INSERT INTO `locations` (`id`, `name`, `type`, `address`, `latitude`, `longitude`, `phone`, `hours`, `summary`, `website`, `picture_url`) VALUES
-(1, 'Caffe bar Trend', 'Cafe', 'Špansko 2, Zagreb', 45.801266, 15.897694, '', '', '', '', ''),
-(2, 'Caffe Bar Poezija', 'Bar', 'Gustava Krkleca 3, Zagreb', 45.801594, 15.903956, '', '', '', '', ''),
-(3, 'Vertigo bar', 'Bar', 'Zagrebacka avenija 100, Zagreb', 45.797256, 15.900417, '(3851) 204-1812', 'Mon - Thu: 10:00 am - 2:00 am\nFri - Sat: 10:00 am - 4:00 am\nSun: 10:00 am - 2:00 am', '', 'http://www.vertigo-bar.com', ''),
-(4, 'Hemingway lounge bar', 'Lounge Bar', 'Tuškanac 1, Zagreb', 45.815422, 15.969365, '(3851) 483-4958', '', '', 'http://www.hemingway.hr', ''),
-(5, 'Kazališna kavana Kavkaz', 'Cafe', 'Gajeva ulica 9, Zagreb', 45.811611, 15.976213, '', '', '', '', ''),
-(6, 'Cyber Funk cafe', 'Bar', 'Masarykova 26, Zagreb', 45.811607, 15.976213, '', '', 'Walk-Ins Welcome\nGood For Kids\nT', 'http://www.cyberfunkcafe.com', ''),
-(7, 'Lemon', 'Nightclub', 'Ljudevita Gaja 10, Zagreb', 45.811611, 15.976213, '(3859) 856-2192', 'Mon - Thu: 8:00 am - 2:00 am\nFri: 8:00 am - 5:00 am\nSat: 9:00 am - 5:00 am\nSun: 10:00 am - 12:00 am', 'Coffee\nDrinks', 'http://www.lemon.hr', ''),
-(8, 'Cosmopolitan Caffe&Wine bar', 'Wine Bar', 'Bogovićeva 1, Zagreb', 45.810459, 15.971525, '', 'Mon - Sun: 8:00 am - 12:00 am', '', '', ''),
-(9, 'Charlie', 'Cafe', 'Ljudevita Gaja 4, Zagreb', 45.812119, 15.976020, '', '', '', '', ''),
-(10, 'Posh Fantasy Bar II', 'Nightclub', 'Teslina 7, Zagreb', 45.811810, 15.976256, '', '', '', '', '');
+(1, 'Caffe bar Trend', 'Cafe', 'Špansko 2, Zagreb', 45.801266, 15.897694, '', '', '', '', 'trend.jpg'),
+(2, 'Caffe Bar Poezija', 'Bar', 'Gustava Krkleca 3, Zagreb', 45.801594, 15.903956, '', '', '', '', 'poezija.jpg'),
+(3, 'Vertigo bar', 'Bar', 'Zagrebacka avenija 100, Zagreb', 45.797256, 15.900417, '(3851) 204-1812', 'Mon - Thu: 10:00 am - 2:00 am\nFri - Sat: 10:00 am - 4:00 am\nSun: 10:00 am - 2:00 am', '', 'http://www.vertigo-bar.com', 'vertigo.jpg'),
+(4, 'Hemingway lounge bar', 'Lounge Bar', 'Tuškanac 1, Zagreb', 45.815422, 15.969365, '(3851) 483-4958', '', '', 'http://www.hemingway.hr', 'hemingway.jpg'),
+(5, 'Kazališna kavana Kavkaz', 'Cafe', 'Gajeva ulica 9, Zagreb', 45.811611, 15.976213, '', '', '', '', 'kavkaz.jpg'),
+(6, 'Cyber Funk cafe', 'Bar', 'Masarykova 26, Zagreb', 45.811607, 15.976213, '', '', 'Walk-Ins Welcome\nGood For Kids\nT', 'http://www.cyberfunkcafe.com', 'cyber.jpg'),
+(7, 'Lemon', 'Nightclub', 'Ljudevita Gaja 10, Zagreb', 45.811611, 15.976213, '(3859) 856-2192', 'Mon - Thu: 8:00 am - 2:00 am\nFri: 8:00 am - 5:00 am\nSat: 9:00 am - 5:00 am\nSun: 10:00 am - 12:00 am', 'Coffee\nDrinks', 'http://www.lemon.hr', 'lemon.jpg'),
+(8, 'Cosmopolitan Caffe&Wine bar', 'Wine Bar', 'Bogovićeva 1, Zagreb', 45.810459, 15.971525, '', 'Mon - Sun: 8:00 am - 12:00 am', '', '', 'cosmopolitan.jpg'),
+(9, 'Charlie', 'Cafe', 'Ljudevita Gaja 4, Zagreb', 45.812119, 15.976020, '', '', '', '', 'charlie.jpg'),
+(10, 'Posh Fantasy Bar II', 'Nightclub', 'Teslina 7, Zagreb', 45.811810, 15.976256, '', '', '', '', 'posh.jpg');
 
 CREATE TABLE IF NOT EXISTS `ratings` (
   `id` INT(20) NOT NULL AUTO_INCREMENT,

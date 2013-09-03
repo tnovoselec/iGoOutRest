@@ -1,10 +1,9 @@
 package hr.rest.petkovic.igoout.api;
 
-import hr.rest.petkovic.igoout.dao.CommentsDao;
 import hr.rest.petkovic.igoout.dao.RatingsDao;
+import hr.rest.petkovic.igoout.exception.AlreadyRatedException;
 import hr.rest.petkovic.igoout.exception.EventNotFoundException;
 import hr.rest.petkovic.igoout.exception.InvalidRequestException;
-import hr.rest.petkovic.igoout.exception.MaxCommentsPerEventException;
 import hr.rest.petkovic.igoout.model.Comment;
 import hr.rest.petkovic.igoout.model.Rating;
 
@@ -30,7 +29,7 @@ public class RatingsApi {
 		if (isRatingRequestValid(eventId, userId, username, rating)) {
 			int status = RatingsDao.instance.createRating(eventId, userId, username, rating);
 			if (status == Rating.USER_ALREADY_RATED_EVENT) {
-				throw new MaxCommentsPerEventException("User alredy commented 3 times on that event");
+				throw new AlreadyRatedException("User alredy commented 3 times on that event");
 			} else if (status == Comment.EVENT_NOT_FOUND) {
 				throw new EventNotFoundException("Event not found");
 			} else {

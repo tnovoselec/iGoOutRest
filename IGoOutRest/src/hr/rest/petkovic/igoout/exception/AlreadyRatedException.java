@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response.Status.Family;
 
 public class AlreadyRatedException extends WebApplicationException {
 
-	private static final int ALREADY_RATED = 1417;
+	private static final int ALREADY_RATED = 552;
 
 	public AlreadyRatedException(final String message) {
 		super(Response.status(new StatusType() {

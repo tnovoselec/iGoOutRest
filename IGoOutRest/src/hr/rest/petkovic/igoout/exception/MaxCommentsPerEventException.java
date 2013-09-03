@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response.StatusType;
 
 public class MaxCommentsPerEventException extends WebApplicationException {
 
-	private static final int MAX_COMMENTS_PER_USER_PER_EVENT_CODE = 1413;
+	private static final int MAX_COMMENTS_PER_USER_PER_EVENT_CODE = 555;
 
 	public MaxCommentsPerEventException(final String message) {
 		super(Response.status(new StatusType() {

@@ -14,7 +14,7 @@ public enum CommentsDao {
 	}
 
 	public List<Comment> getComments(int eventId) {
-		return MockData.getComments();
+		return DBHelper.getInstance().getCommentsOnEvent(eventId);
 	}
 
 	public int createComment(int eventId, int userId, String username, String comment) {

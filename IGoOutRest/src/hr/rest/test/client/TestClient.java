@@ -19,36 +19,36 @@ public class TestClient {
 		ClientConfig config = new DefaultClientConfig();
 		Client client = Client.create(config);
 		WebResource service = client.resource(getBaseURI());
-
-		JSONObject json = new JSONObject();
-		JSONArray interests = new JSONArray();
-		interests.put(1);
-		interests.put(2);
-		interests.put(3);
-		JSONArray venues = new JSONArray();
-		venues.put(2);
-		venues.put(3);
-		venues.put(4);
-		venues.put(5);
-		int radiusId = 5;
-		double lat = 45.80;
-		double lng = 15.92;
-		try {
-			json.put("interests", interests);
-			json.put("venues", venues);
-			json.put("radiusId", radiusId);
-			json.put("lat", lat);
-			json.put("lng", lng);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//
+//		JSONObject json = new JSONObject();
+//		JSONArray interests = new JSONArray();
+//		interests.put(1);
+//		interests.put(2);
+//		interests.put(3);
+//		JSONArray venues = new JSONArray();
+//		venues.put(2);
+//		venues.put(3);
+//		venues.put(4);
+//		venues.put(5);
+//		int radiusId = 5;
+//		double lat = 45.80;
+//		double lng = 15.92;
+//		try {
+//			json.put("interests", interests);
+//			json.put("venues", venues);
+//			json.put("radiusId", radiusId);
+//			json.put("lat", lat);
+//			json.put("lng", lng);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		// Fluent interfaces
 		// System.out.println(service.path("rest").path("hello")
 		// .accept(MediaType.TEXT_PLAIN).get(ClientResponse.class)
 		// .toString());
 		// Get plain text
-		System.out.println(service.path("rest").path("locations").accept(MediaType.APPLICATION_JSON)
-				.post(String.class, json));
+//		System.out.println(service.path("rest").path("locations").accept(MediaType.APPLICATION_JSON)
+//				.post(String.class, json));
 		// Get XML
 //		System.out.println(service.path("rest").path("events/10")
 //				.accept(MediaType.APPLICATION_JSON).get(String.class));
@@ -70,22 +70,25 @@ public class TestClient {
 //			
 //		}
 		
-		JSONObject rating = new JSONObject();
-		try{
-			rating.put("user_id", 4);
-			rating.put("event_id", 2);
-			rating.put("username", "bogdan");
-			rating.put("rating", 5);
-		}catch(Exception e){
-			
-		}
+//		JSONObject rating = new JSONObject();
+//		try{
+//			rating.put("user_id", 4);
+//			rating.put("event_id", 2);
+//			rating.put("username", "bogdan");
+//			rating.put("rating", 5);
+//		}catch(Exception e){
+//			
+//		}
 //		System.out.println(service.path("rest").path("user/login")
 //				.accept(MediaType.APPLICATION_JSON).post(String.class, user));
-		System.out.println(service.path("rest").path("ratings")
-				.accept(MediaType.APPLICATION_JSON).post(String.class, rating));
+//		System.out.println(service.path("rest").path("ratings")
+//				.accept(MediaType.APPLICATION_JSON).post(String.class, rating));
 		// The HTML
 		// System.out.println(service.path("rest").path("hello")
 		// .accept(MediaType.TEXT_HTML).get(String.class));
+		
+		System.out.println(service.path("rest").path("comments/1")
+				.accept(MediaType.APPLICATION_JSON).get(String.class));
 
 	}
 

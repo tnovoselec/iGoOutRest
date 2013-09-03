@@ -190,7 +190,7 @@ public class DBHelper {
 
 	public List<Comment> getCommentsOnEvent(int eventId) {
 		List<Comment> comments = new ArrayList<Comment>();
-		String sql = "SELECT * FROM comments WHEHRE event_id =" + eventId;
+		String sql = "SELECT * FROM comments WHERE event_id =" + eventId;
 		System.out.println(sql);
 		SimpleMySQLResult result = simpleMySql.Query(sql);
 		while (result.next()) {
