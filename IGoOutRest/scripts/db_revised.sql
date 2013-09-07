@@ -182,3 +182,18 @@ INSERT INTO `location_interests` (`location_id`, `interest_id`) VALUES
 (10, 10),
 (11, 11),
 (12, 12);
+
+DROP TRIGGER IF EXISTS `after_rating_update`;
+DELIMITER //
+CREATE TRIGGER `after_rating_update` AFTER INSERT ON `ratings`
+ FOR EACH ROW BEGIN
+	DECLARE new_rating FLOAT;
+	DECLARE event_rating FLOAT;
+	DECLARE ratings_number INT;
+	SET ratings_number = (SELECT COUNT(*) FROM ratings WHERE event_id = NEW.event_id);
+	SET event_rating = (SELECT rating FROM events WHERE id = NEW.event_id);
+	SET new_rating = (event_rating*(ratings_number-1) + NEW.rating)/ratings_number;
+	UPDATE EVENTS SET events.rating = new_rating WHERE events.id = NEW.event_id;
+END
+//
+DELIMITER ;
