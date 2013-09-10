@@ -15,7 +15,7 @@ public class Constants {
 		RADIUS.put(2, 10);
 		RADIUS.put(3, 25);
 		RADIUS.put(4, 50);
-		RADIUS.put(5, 1000);
+		RADIUS.put(5, 100000);
 	}
 
 }
