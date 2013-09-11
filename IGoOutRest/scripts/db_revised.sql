@@ -193,7 +193,7 @@ CREATE TRIGGER `after_rating_update` AFTER INSERT ON `ratings`
 	SET ratings_number = (SELECT COUNT(*) FROM ratings WHERE event_id = NEW.event_id);
 	SET event_rating = (SELECT rating FROM events WHERE id = NEW.event_id);
 	SET new_rating = (event_rating*(ratings_number-1) + NEW.rating)/ratings_number;
-	UPDATE EVENTS SET events.rating = new_rating WHERE events.id = NEW.event_id;
+	UPDATE events SET events.rating = new_rating WHERE events.id = NEW.event_id;
 END
 //
 DELIMITER ;
